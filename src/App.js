@@ -10,15 +10,17 @@ const Page = ({ title }) => (
         <h1>Lighten Up, World</h1>
         <h2>{title}</h2>
       </div>
-      <p>
-        <Link to="/">Effects</Link>
-      </p>
-      <p>
-        <Link to="/live_data">Live Data</Link>
-      </p>
-      <p>
-        <Link to="/games">Games</Link>
-      </p>
+      <form>
+        <label>
+          <input class="NavButton" type="button" value="Effects"/>
+        </label>
+        <label>
+          <input class="NavButton" type="button" value="Live Data"/>
+        </label>
+        <label>
+          <input class="NavButton" type="button" value="Games"/>
+        </label>
+      </form>
     </div>
 );
 
