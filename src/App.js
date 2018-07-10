@@ -7,41 +7,40 @@ const Page = ({ title }) => (
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>Lighten Up, World</h1>
         <h2>{title}</h2>
       </div>
-      <p className="App-intro">
-        This is the {title} page.
+      <p>
+        <Link to="/">Effects</Link>
       </p>
       <p>
-        <Link to="/">Home</Link>
+        <Link to="/live_data">Live Data</Link>
       </p>
       <p>
-        <Link to="/about">About</Link>
-      </p>
-      <p>
-        <Link to="/settings">Settings</Link>
+        <Link to="/games">Games</Link>
       </p>
     </div>
 );
 
-const Home = (props) => (
-  <Page title="Home"/>
+const Effects = (props) => (
+  <Page title="Effects"/>
 );
 
-const About = (props) => (
-  <Page title="About"/>
+const Live_Data = (props) => (
+  <Page title="Live Data"/>
 );
 
-const Settings = (props) => (
-  <Page title="Settings"/>
+const Games = (props) => (
+  <Page title="Games"/>
 );
 
 class App extends Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Home}/>
-        <Route path="/about" component={About}/>
+        <Route path="/" component={Effects}/>
+        <Route path="/live_data" component={Live_Data}/>
+        <Route path="/games" component={Games}/>
       </Router>
     );
   }
