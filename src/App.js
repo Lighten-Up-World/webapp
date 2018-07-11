@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
-import logo from './logo.svg';
+import logo from './lighten_up_world.svg';
 import './App.css';
 
 const Page = ({ title }) => (
