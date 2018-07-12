@@ -8,7 +8,7 @@ const Page = ({ title }) => (
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Lighten Up, World</h1>
-        <h2>{title}</h2>
+        <h2>Home</h2>
       </div>
       <form>
         <label>
