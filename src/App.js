@@ -23,7 +23,7 @@ const HomePage = (props, context) => (
     </div>
 );
 
-const Page = ({title}) => (
+const PageHeader = ({title}) => (
   <div className="App">
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
@@ -32,16 +32,22 @@ const Page = ({title}) => (
   </div>
 );
 
+const PageButton = ({name}) => (
+  <label>
+    <button className="EffectButton">{name}</button>
+  </label>
+);
+
 const Effects = () => (
-  <Page title="Effects"/>
+  <PageHeader title="Effects" buttons/>
 );
 
 const Live_Data = (props) => (
-  <Page title="Live Data"/>
+  <PageHeader title="Live Data"/>
 );
 
 const Games = (props) => (
-  <Page title="Games"/>
+  <PageHeader title="Games"/>
 );
 
 class App extends Component {

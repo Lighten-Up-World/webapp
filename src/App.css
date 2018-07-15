@@ -38,6 +38,22 @@
   background-color:#ffffff;
 }
 
+.EffectButton {
+  display:inline-block;
+  font-size:16px;
+  background-color:#61dafb;
+  color:#000000;
+  padding:25px 50px;
+  white-space:nowrap;
+  transition:background-color 0.2s ease-out;
+  -webkit-transition:background-color 0.2s ease-out;
+  -moz-transition:background-color 0.2s ease-out;
+}
+
+.EffectButton:hover {
+  background-color:#ffffff;
+}
+
 /* TODO: adapt for our logo*/
 @keyframes fade-to-black {
   from { transform: rotate(0deg); }
