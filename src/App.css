@@ -22,6 +22,22 @@
   font-size: large;
 }
 
+/*button*/
+.NavButton {
+  display:inline-block;
+  font-size:24px;
+  background-color:#61dafb;
+  color:#000000;
+  padding:75px 150px;
+  white-space:nowrap;
+  transition:background-color 0.2s ease-out;
+  -webkit-transition:background-color 0.2s ease-out;
+  -moz-transition:background-color 0.2s ease-out;}
+
+.NavButton:hover {
+  background-color:#ffffff;
+}
+
 /* TODO: adapt for our logo*/
 @keyframes fade-to-black {
   from { transform: rotate(0deg); }

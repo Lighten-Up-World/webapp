@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
+import BrowserRouter from 'react-router-dom'
 import logo from './lighten_up_world.svg';
 import './App.css';
 
-const HomePage = (props) => (
+const HomePage = (props, context) => (
     <div className="App">
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Lighten Up, World</h1>
         <h2>Home</h2>
-        <form>
           <label>
-            <input className="NavButton" type="button" value="Effects" />
+            <Link className="NavButton" to="/effects">Effects</Link>
           </label>
           <label>
-            <input className="NavButton" type="button" value="Live Data"/>
+            <Link className="NavButton" to="live_data">Live Data</Link>
           </label>
           <label>
-            <input className="NavButton" type="button" value="Games"/>
+            <Link className="NavButton" to="games">Games</Link>
           </label>
-        </form>
       </div>
     </div>
 );
