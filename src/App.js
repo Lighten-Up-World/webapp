@@ -23,7 +23,7 @@ const HomePage = (props, context) => (
     </div>
 );
 
-const PageHeader = ({title}) => (
+const PageHeader = ({title}, {buttons}) => (
   <div className="App">
     <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
@@ -38,8 +38,14 @@ const PageButton = ({name}) => (
   </label>
 );
 
+const effectNames = [
+  {id: 1, name: "Raverplaid"},
+  {id: 2, name: "LavaLamp"},
+  {id: 3, name: "Conway's game of life"}
+];
+
 const Effects = () => (
-  <PageHeader title="Effects" buttons/>
+  <PageHeader title="Effects" buttons={effectNames}/>
 );
 
 const Live_Data = (props) => (
