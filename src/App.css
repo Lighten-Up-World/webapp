@@ -1,5 +1,7 @@
 .App {
+  background-color: #000;
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -9,7 +11,7 @@
 
 .App-header {
   background-color: #000;
-  height: 100vh;
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -29,6 +31,9 @@
   background-color:#61dafb;
   color:#000000;
   padding:75px 150px;
+  box-shadow:0 0 5px;
+  margin:0.5em;
+  border-radius:0.2em;
   white-space:nowrap;
   transition:background-color 0.2s ease-out;
   -webkit-transition:background-color 0.2s ease-out;
@@ -44,6 +49,9 @@
   background-color:#61dafb;
   color:#000000;
   padding:25px 50px;
+  box-shadow:0 0 5px;
+  margin:0.5em;
+  border-radius:0.2em;
   white-space:nowrap;
   transition:background-color 0.2s ease-out;
   -webkit-transition:background-color 0.2s ease-out;
