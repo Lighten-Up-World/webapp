@@ -62,6 +62,21 @@
   background-color:#ffffff;
 }
 
+.HomeButton {
+  position: fixed;
+  left: 340px;
+  background-color: #61dafb;
+  border: none;
+  color: #000000;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+HomeButton:hover {
+  background-color:#ffffff;
+}
+
 /* TODO: adapt for our logo*/
 @keyframes fade-to-black {
   from { transform: rotate(0deg); }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
 import logo from './lighten_up_world.svg';
-import { effectNames, dataNames, gamesNames } from './buttonNames'
+import { effectNames, dataNames, gamesNames } from './buttonNames';
+import FaHome from 'react-icons/lib/fa/home';
 import './App.css';
 
 const HomePage = (props, context) => (
@@ -18,13 +19,13 @@ const HomePage = (props, context) => (
           </label>
           <label>
             <Link className="NavButton"
-                  to="live_data"
+                  to="/live_data"
                   style={{ textDecoration: 'none' }}
             >Live Data</Link>
           </label>
           <label>
             <Link className="NavButton"
-                  to="games"
+                  to="/games"
                   style={{ textDecoration: 'none' }}
             >Games</Link>
           </label>
@@ -34,7 +35,9 @@ const HomePage = (props, context) => (
 
 const PageHeader = ({title, buttons}) => (
   <div className="App">
+    {/* TODO: add button to home screen */}
     <div className="App-header">
+      <Link className="HomeButton" to="/" style={{ textDecoration: 'none' }}><FaHome /> Home </Link>
       <img src={logo} className="App-logo" alt="logo" />
       <h1>{title}</h1>
     </div>
