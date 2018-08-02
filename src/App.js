@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Router, browserHistory, Route, Link } from 'react-router';
 import logo from './lighten_up_world.svg';
 import { effectNames, dataNames, gamesNames } from './buttonNames';
-import FaHome from 'react-icons/lib/fa/home';
+import { Snake } from './snake'
+import {FaHome} from 'react-icons/lib/fa';
 import './App.css';
 
 const HomePage = (props, context) => (
@@ -100,14 +101,7 @@ const Games = (props) => (
   <GamesPage title="Games" buttons={gamesNames}/>
 );
 
-const Snake = (props) => (
-  <div className="blank">
-    <h1>Snake</h1>
-    {/* To Display:
-      Pause/Play button, Leave button, instructions, arrow keys */}
-  </div>
-);
-
+{/* TODO: move to separate js file and import */}
 const Risk = (props) => (
   <div className="blank">
     <h1>Risk</h1>
