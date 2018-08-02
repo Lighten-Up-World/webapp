@@ -24,6 +24,12 @@
   font-size: large;
 }
 
+.blank{
+  background-color: #ffffff;
+  text-align:ce7center;
+  height:100vh;
+}
+
 /*button*/
 .NavButton {
   display:inline-block;

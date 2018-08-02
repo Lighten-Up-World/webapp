@@ -11,31 +11,15 @@ const HomePage = (props, context) => (
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Lighten Up, World</h1>
         <h2>Home</h2>
-          <label>
-            <Link className="NavButton"
-                  to="/effects"
-                  style={{ textDecoration: 'none' }}
-            >Effects</Link>
-          </label>
-          <label>
-            <Link className="NavButton"
-                  to="/live_data"
-                  style={{ textDecoration: 'none' }}
-            >Live Data</Link>
-          </label>
-          <label>
-            <Link className="NavButton"
-                  to="/games"
-                  style={{ textDecoration: 'none' }}
-            >Games</Link>
-          </label>
+          <PageLink link="effects" cName="NavButton"/>
+          <PageLink link="live_data" cName="NavButton" />
+          <PageLink link="games" cName="NavButton" />
       </div>
     </div>
 );
 
-const PageHeader = ({title, buttons}) => (
+const EffectPage = ({title, buttons}) => (
   <div className="App">
-    {/* TODO: add button to home screen */}
     <div className="App-header">
       <Link className="HomeButton" to="/" style={{ textDecoration: 'none' }}><FaHome /> Home </Link>
       <img src={logo} className="App-logo" alt="logo" />
@@ -44,6 +28,35 @@ const PageHeader = ({title, buttons}) => (
     <Buttons buttons={buttons}/>
   </div>
 );
+
+const GamesPage = ({title, buttons}) => (
+  <div className="App">
+    <div className="App-header">
+      <Link className="HomeButton" to="/" style={{ textDecoration: 'none' }}><FaHome /> Home </Link>
+      <img src={logo} className="App-logo" alt="logo" />
+      <h1>{title}</h1>
+    </div>
+    <PageLink link="snake" cName="EffectButton"/>
+    <PageLink link="risk" cName="EffectButton"/>
+  </div>
+);
+
+class PageLink extends React.Component {
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  render() {
+    return(
+      <label>
+        <Link className={this.props.cName}
+              to={"/" + this.props.link}
+              style={{ textDecoration: 'none' }}
+        >{this.capitalizeFirstLetter(this.props.link)}</Link>
+      </label>
+    );
+  }
+};
 
 class Buttons extends React.Component {
 
@@ -76,15 +89,35 @@ const PageButton = ({name}) => (
 );
 
 const Effects = () => (
-  <PageHeader title="Effects" buttons={effectNames}/>
+  <EffectPage title="Effects" buttons={effectNames}/>
 );
 
 const Live_Data = (props) => (
-  <PageHeader title="Live Data" buttons={dataNames}/>
+  <EffectPage title="Live Data" buttons={dataNames}/>
 );
 
 const Games = (props) => (
-  <PageHeader title="Games" buttons={gamesNames}/>
+  <GamesPage title="Games" buttons={gamesNames}/>
+);
+
+const Snake = (props) => (
+  <div className="blank">
+    <h1>Snake</h1>
+    {/* To Display:
+      Pause/Play button, Leave button, instructions, arrow keys */}
+  </div>
+);
+
+const Risk = (props) => (
+  <div className="blank">
+    <h1>Risk</h1>
+    {/* To Display:
+      Number of troops, number of occupied countries,
+      number of troops to deploy, outline of selected country and
+      number of populated troops, colour/player who occupies selected country,
+      Arrows to navigate countries.
+       */}
+  </div>
 );
 
 class App extends Component {
@@ -95,6 +128,8 @@ class App extends Component {
         <Route path="/effects" component={Effects}/>
         <Route path="/live_data" component={Live_Data}/>
         <Route path="/games" component={Games}/>
+        <Route path="/snake" component={Snake}/>
+        <Route path="/risk" component={Risk}/>
       </Router>
     );
   }
