@@ -85,7 +85,8 @@ class Buttons extends React.Component {
 
 const PageButton = ({name}) => (
   <label>
-    <button className="EffectButton">{name}</button>
+    <form action="http://127.0.0.1:9997" method="Post" id="reqForm"></form>
+    <button className="EffectButton" form="reqForm">{name}</button>
   </label>
 );
 
