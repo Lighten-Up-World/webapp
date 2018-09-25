@@ -1,44 +1,44 @@
+export const dataNames = [
+    {
+        id: 1,
+        name: "Live Temperature",
+    },
+    {
+        id: 2,
+        name: "Live Windspeeds",
+    },
+    {
+        id: 3,
+        name: "Sunset/Sunrise",
+    },
+    {
+        id: 4,
+        name: "Twitter Activity",
+    },
+];
+
 export const effectNames = [
   {
-    id: 1,
+    id: 5,
     name: "Raverplaid",
   },
   {
-    id: 2,
+    id: 6,
     name: "LavaLamp",
   },
   {
-    id: 3,
+    id: 7,
     name: "Conway's game of life",
-  },
-];
-
-export const dataNames = [
-  {
-    id: 1,
-    name: "Live Temperature",
-  },
-  {
-    id: 2,
-    name: "Live Windspeeds",
-  },
-  {
-    id: 3,
-    name: "Sunset/Sunrise",
-  },
-  {
-    id: 4,
-    name: "Twitter Activity",
   },
 ];
 
 export const gamesNames = [
   {
-    id: 1,
+    id: 8,
     name: "Snake",
   },
   {
-    id: 2,
+    id: 9,
     name: "Risk",
   },
 ];
