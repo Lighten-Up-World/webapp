@@ -60,11 +60,11 @@ class PageLink extends React.Component {
 };
 
 class EffectButton extends React.Component {
-    sendCommand(id) {
+    sendCommand() {
         if ("WebSocket" in window) {
             const ws = new WebSocket("ws://localhost:9090");
             ws.onopen = function () {
-                ws.send("ID-" + id);
+                ws.send("ID-" + this.id);
                 ws.close();
             };
         } else {
@@ -75,7 +75,7 @@ class EffectButton extends React.Component {
     render() {
         return (
             <label>
-                <button className="EffectButton" onClick={() => {this.sendCommand(this.props.id)}}>{this.props.name}</button>
+                <button className="EffectButton" onClick={() => {this.sendCommand()}}>{this.name}</button>
             </label>
         );
     }
@@ -83,13 +83,13 @@ class EffectButton extends React.Component {
 
 class Buttons extends React.Component {
 
-  renderButtons = (props) => {
+  renderButtons = () => {
     let buttonArr = [];
 
     for (let i = 0; i < this.props.buttons.length; i++) {
       buttonArr.push(
         <EffectButton
-          key={this.props.buttons[i].id}
+          id={this.props.buttons[i].id}
           name={this.props.buttons[i].name}/>
       );
     };
@@ -109,11 +109,11 @@ const Effects = () => (
   <EffectPage title="Effects" buttons={effectNames}/>
 );
 
-const Live_Data = (props) => (
+const Live_Data = () => (
   <EffectPage title="Live Data" buttons={dataNames}/>
 );
 
-const Games = (props) => (
+const Games = () => (
   <GamesPage title="Games" buttons={gamesNames}/>
 );
 
