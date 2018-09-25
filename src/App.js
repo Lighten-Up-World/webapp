@@ -59,6 +59,28 @@ class PageLink extends React.Component {
   }
 };
 
+class EffectButton extends React.Component {
+    sendCommand(id) {
+        if ("WebSocket" in window) {
+            const ws = new WebSocket("ws://localhost:9090");
+            ws.onopen = function () {
+                ws.send("ID-" + id);
+                ws.close();
+            };
+        } else {
+            alert("WebSockets are not supported by your browser");
+        }
+    }
+
+    render() {
+        return (
+            <label>
+                <button className="EffectButton" onClick={() => {this.sendCommand(this.props.id)}}>{this.props.name}</button>
+            </label>
+        );
+    }
+}
+
 class Buttons extends React.Component {
 
   renderButtons = (props) => {
@@ -66,7 +88,7 @@ class Buttons extends React.Component {
 
     for (let i = 0; i < this.props.buttons.length; i++) {
       buttonArr.push(
-        <PageButton
+        <EffectButton
           key={this.props.buttons[i].id}
           name={this.props.buttons[i].name}/>
       );
@@ -81,14 +103,7 @@ class Buttons extends React.Component {
       </div>
     );
   }
-};
-
-const PageButton = ({name}) => (
-  <label>
-    <form action="http://127.0.0.1:9997" method="Post" id="reqForm"></form>
-    <button className="EffectButton" form="reqForm">{name}</button>
-  </label>
-);
+}
 
 const Effects = () => (
   <EffectPage title="Effects" buttons={effectNames}/>
