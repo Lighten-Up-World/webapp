@@ -3,7 +3,7 @@ import { Router, browserHistory, Route, Link } from 'react-router';
 import logo from './lighten_up_world.svg';
 import { effectNames, dataNames, gamesNames } from './buttonNames';
 import { Snake } from './snake'
-import {FaHome} from 'react-icons/lib/fa';
+import { FaHome } from 'react-icons/lib/fa';
 import './App.css';
 
 const HomePage = (props, context) => (
@@ -60,12 +60,32 @@ class PageLink extends React.Component {
 };
 
 class EffectButton extends React.Component {
-    sendCommand(id) {
+    sendCommand(name) {
         if ("WebSocket" in window) {
             const ws = new WebSocket("ws://localhost:9090");
             ws.onopen = function () {
-                ws.send("ID-" + id);
-                ws.close();
+              switch (name) {
+                case "Live Temperature":
+                  ws.send("temp");
+                  break;
+                case "Temperature Timelapse":
+                  ws.send("temp_timelapse");
+                  break;
+                case "Live Windspeed":
+                  ws.send("windspeed");
+                  break;
+                case "Sunset/Sunrise":
+                  ws.send("sun");
+                  break;
+                case "Scroll":
+                  ws.send("scroll");
+                  break;
+                case "Raverplaid":
+                  ws.send("raverplaid");
+                  break;
+                // ETC...
+              }
+              ws.close();
             };
         } else {
             alert("WebSockets are not supported by your browser");
@@ -75,7 +95,7 @@ class EffectButton extends React.Component {
     render() {
         return (
             <label>
-                <button className="EffectButton" onClick={() => {this.sendCommand(this.props.id)}}>{this.props.name}</button>
+                <button className="EffectButton" onClick={() => {this.sendCommand(this.props.name)}}>{this.props.name}</button>
             </label>
         );
     }
