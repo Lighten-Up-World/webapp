@@ -11,34 +11,34 @@ export const dataNames = [
         id: 3,
         name: "Sunset/Sunrise",
     },
-    {
+    /*{
         id: 4,
         name: "Twitter Activity",
-    },
+    },*/
 ];
 
 export const effectNames = [
   {
-    id: 5,
+    id: 4,
     name: "Raverplaid",
   },
   {
-    id: 6,
+    id: 5,
     name: "LavaLamp",
   },
   {
-    id: 7,
+    id: 6,
     name: "Conway's game of life",
   },
 ];
 
 export const gamesNames = [
   {
-    id: 8,
+    id: 7,
     name: "Snake",
   },
   {
-    id: 9,
+    id: 8,
     name: "Risk",
   },
 ];

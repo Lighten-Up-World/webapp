@@ -13,8 +13,8 @@ const HomePage = (props, context) => (
         <h1>Lighten Up, World</h1>
         <h2>Home</h2>
           <PageLink link="effects" cName="NavButton"/>
-          <PageLink link="live_data" cName="NavButton" />
-          <PageLink link="games" cName="NavButton" />
+          <PageLink link="data" cName="NavButton" />
+          {/*<PageLink link="games" cName="NavButton" />*/}
       </div>
     </div>
 );
@@ -130,18 +130,19 @@ const Effects = () => (
   <EffectPage title="Effects" buttons={effectNames}/>
 );
 
-const Live_Data = () => (
-  <EffectPage title="Live Data" buttons={dataNames}/>
+const Data = () => (
+  <EffectPage title="Data" buttons={dataNames}/>
 );
 
-const Games = () => (
-  <GamesPage title="Games" buttons={gamesNames}/>
-);
+//const Games = () => (
+//  <GamesPage title="Games" buttons={gamesNames}/>
+//);
 
 {/* TODO: move to separate js file and import */}
 const Risk = (props) => (
   <div className="blank">
     <h1>Risk</h1>
+      <p>Coming Soon...</p>
     {/* To Display:
       Number of troops, number of occupied countries,
       number of troops to deploy, outline of selected country and
@@ -157,8 +158,8 @@ class App extends Component {
       <Router history={browserHistory}>
         <Route path="/" component={HomePage}/>
         <Route path="/effects" component={Effects}/>
-        <Route path="/live_data" component={Live_Data}/>
-        <Route path="/games" component={Games}/>
+        <Route path="/data" component={Data}/>
+          {/*<Route path="/games" component={Games}/>*/}
         <Route path="/snake" component={Snake}/>
         <Route path="/risk" component={Risk}/>
       </Router>
