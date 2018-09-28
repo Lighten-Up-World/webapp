@@ -1,7 +1,14 @@
 .App {
   background-color: #000;
   text-align: center;
-  height: 100vh;
+  /* Set rules to fill background for any device*/
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0
 }
 
 .App-logo {
@@ -63,8 +70,8 @@
 }
 
 .HomeButton {
-  position: fixed;
-  left: 340px;
+  position: absolute;
+  left: 10%;
   background-color: #61dafb;
   border: none;
   box-shadow:0 0 5px;
