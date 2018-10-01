@@ -62,7 +62,7 @@ class PageLink extends React.Component {
 class EffectButton extends React.Component {
     sendCommand(name) {
         if ("WebSocket" in window) {
-            const ws = new WebSocket("ws://localhost:9090");
+            const ws = new WebSocket("ws://172.24.1.1:9090");
             ws.onopen = function () {
               switch (name) {
                 case "Live Temperature":
