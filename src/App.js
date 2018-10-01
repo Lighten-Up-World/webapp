@@ -15,11 +15,6 @@ const HomePage = (props, context) => (
             <h1>Lighten Up, World</h1>
             <p class="lead">Representing Glow-bal data</p>
           </div>
-          <div class="col-lg-4 col-md-5 col-sm-6">
-            <div class="sponsor">
-              <script async="" type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIE23N&amp;placement=bootswatchcom" id="_carbonads_js"></script>
-            </div>
-          </div>
         </div>
       </div>
     <div class="row">
@@ -82,7 +77,7 @@ const EffectPage = ({title, buttons}) => (
 class EffectButton extends React.Component {
     sendCommand(name) {
         if ("WebSocket" in window) {
-            const ws = new WebSocket("ws://localhost:9090");
+            const ws = new WebSocket("ws://world.map:9090");
             ws.onopen = function () {
               ws.send(this.props.id)
               ws.close();
