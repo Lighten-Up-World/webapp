@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import {FaArrowCircleUp, FaArrowCircleRight, FaArrowCircleLeft,
         FaArrowCircleDown, FaChevronLeft} from 'react-icons/lib/fa';
 
-{/*TODO: look into changing state when play button clicked. */}
+/*TODO: look into changing state when play button clicked. */
 export class Snake extends React.Component {
   constructor(props) {
     super(props);

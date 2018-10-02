@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Router, browserHistory, Route, Link } from 'react-router';
-import logo from './lighten_up_world.svg';
-import { effectNames, dataNames, gamesNames } from './buttonNames';
-import { Snake } from './snake'
-import { FaHome } from 'react-icons/lib/fa';
+import { Router, browserHistory, Route } from 'react-router';
+import { effectNames, dataNames } from './buttonNames';
+import { Snake } from './snake';
 import './App.css';
 
 
@@ -85,7 +83,7 @@ class EffectButton extends React.Component {
     render() {
         return (
           <div className="card col-sm-12 col-md-6 col-lg-4">
-            <img className="card-img-top" src={"./img/sim_" + this.props.id + ".gif"}/>
+            <img className="card-img-top" src={"./img/sim_" + this.props.id + ".gif"} alt="Visual Demonstration of effect"/>
               <div className="card-body text-center">
                 <button type="button" className="btn btn-primary" onClick={() => {this.sendCommand(this.props.name)}}>{this.props.name}</button>
               </div>
@@ -131,7 +129,6 @@ const Data = () => (
 //  <GamesPage title="Games" buttons={gamesNames}/>
 //);
 
-{/* TODO: move to separate js file and import */}
 const Risk = (props) => (
   <div className="jumbotron">
     <h1 className="display-3">Risk!</h1>
