@@ -72,7 +72,7 @@ class EffectButton extends React.Component {
         if ("WebSocket" in window) {
             const ws = new WebSocket("ws://world.map:9090");
             ws.onopen = function () {
-              ws.send(this.props.id)
+              ws.send(name);
               ws.close();
             };
         } else {
@@ -85,7 +85,7 @@ class EffectButton extends React.Component {
           <div className="card col-sm-12 col-md-6 col-lg-4">
             <img className="card-img-top" src={"./img/sim_" + this.props.id + ".gif"} alt="Visual Demonstration of effect"/>
               <div className="card-body text-center">
-                <button type="button" className="btn btn-primary" onClick={() => {this.sendCommand(this.props.name)}}>{this.props.name}</button>
+                <button type="button" className="btn btn-primary" onClick={() => {this.sendCommand(this.props.id)}}>{this.props.name}</button>
               </div>
           </div>
         );
