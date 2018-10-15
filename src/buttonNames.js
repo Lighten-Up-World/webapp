@@ -2,16 +2,16 @@ export const dataNames = [
     {
         id: 1,
         machine: "1",
-        name: "Live Temperature",
+        name: "Temperature Timelapse",
     },
+    /*{
+        id: 2,
+        machine: "-",
+        name: "Live Windspeeds",
+    },*/
     {
         id: 2,
         machine: "2",
-        name: "Live Windspeeds",
-    },
-    {
-        id: 3,
-        machine: "3",
         name: "Sunset/Sunrise",
     },
     /*{
@@ -23,17 +23,17 @@ export const dataNames = [
 export const effectNames = [
   {
     id: 4,
-    machine: "4",
+    machine: "3",
     name: "Raverplaid",
   },
   {
     id: 5,
-    machine: "5",
+    machine: "4",
     name: "Lava Lamp",
   },
   {
     id: 6,
-    machine: "6",
+    machine: "5",
     name: "Conway's game of life",
   },
 ];
@@ -41,12 +41,12 @@ export const effectNames = [
 export const gamesNames = [
   {
     id: 7,
-    machine: "7",
+    machine: "-",
     name: "Snake",
   },
   {
     id: 8,
-    machine: "8",
+    machine: "-",
     name: "Risk",
   },
 ];
